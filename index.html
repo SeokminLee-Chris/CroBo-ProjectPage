@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CroBo: Pixel-level Scene Understanding in One Token</title>
+
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Academicons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .title, .subtitle, h1, h2, h3, .author-block {
+      font-family: 'Google Sans', 'Noto Sans', sans-serif;
+    }
+
+    /* ── Hero ── */
+    .hero.is-light {
+      background: #f5f5f5;
+    }
+
+    .publication-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .publication-authors {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+    }
+
+    .author-block {
+      display: inline-block;
+      margin: 0 0.3rem;
+    }
+
+    .publication-venue {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #4a4a4a;
+      margin-top: 0.5rem;
+    }
+
+    /* ── Link buttons ── */
+    .publication-links {
+      margin-top: 1.2rem;
+    }
+
+    .link-block a {
+      border-radius: 6px;
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+
+    /* ── Sections ── */
+    section.section {
+      padding: 3rem 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    .abstract-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      text-align: justify;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    /* ── Figures ── */
+    .fig-container {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    .fig-container img {
+      max-width: 100%;
+      border-radius: 6px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    }
+
+    .fig-caption {
+      font-size: 0.92rem;
+      color: #555;
+      margin-top: 0.75rem;
+      text-align: justify;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── BibTeX ── */
+    .bibtex-block {
+      background: #f0f0f0;
+      border-radius: 6px;
+      padding: 1.2rem 1.5rem;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.88rem;
+      line-height: 1.7;
+      overflow-x: auto;
+      white-space: pre;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    /* ── Highlight box ── */
+    .highlight-box {
+      background: #f0f4ff;
+      border-left: 4px solid #3273dc;
+      border-radius: 4px;
+      padding: 1rem 1.2rem;
+      margin: 1.5rem auto;
+      max-width: 860px;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* ── Alternating section bg ── */
+    .section-alt {
+      background: #fafafa;
+    }
+
+    /* ── Footer ── */
+    footer.footer {
+      background: #f5f5f5;
+      padding: 2rem 1.5rem;
+      font-size: 0.88rem;
+      color: #777;
+      text-align: center;
+    }
+
+    footer a {
+      color: #3273dc;
+    }
+
+    /* ── Result grid ── */
+    .result-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      .result-grid {
+        grid-template-columns: 1fr;
+      }
+      .publication-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════ HERO ══ -->
+<section class="hero is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop has-text-centered">
+
+      <h1 class="title publication-title">
+        Pixel-level Scene Understanding in One Token:<br>
+        Visual States Need What-is-Where Composition
+      </h1>
+
+      <div class="publication-authors">
+        <span class="author-block"><a href="#">Seokmin Lee</a>,</span>
+        <span class="author-block"><a href="#">Yunghee Lee</a>,</span>
+        <span class="author-block"><a href="#">Byeonghyun Pak</a>,</span>
+        <span class="author-block"><a href="#">Byeongju Woo</a></span>
+      </div>
+
+      <div class="publication-venue mt-3">
+        Agency for Defence Development (ADD)
+      </div>
+
+      <!-- Links -->
+      <div class="publication-links mt-4">
+        <span class="link-block mr-2">
+          <a href="https://arxiv.org/abs/2603.13904" class="button is-dark is-rounded" target="_blank">
+            <span class="icon"><i class="ai ai-arxiv"></i></span>
+            <span>arXiv</span>
+          </a>
+        </span>
+        <span class="link-block">
+          <a href="https://github.com/SeokminLee-Chris/CroBo" class="button is-dark is-rounded" target="_blank">
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>Code</span>
+          </a>
+        </span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ TEASER ══ -->
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="fig-container">
+      <img src="figs/architecture_main.png" alt="CroBo overview teaser">
+    </div>
+
+    <div class="highlight-box">
+      <strong>TL;DR</strong> — We propose <strong>CroBo</strong>, a self-supervised visual representation framework for robotics that encodes both <em>what</em> is in the scene and <em>where</em> it is, all in a single compact token.
+      By reconstructing masked local crops from a global bottleneck token,
+      CroBo learns pixel-level scene composition and achieves state-of-the-art results on robot policy learning benchmarks.
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════ ABSTRACT ══ -->
+<section class="section section-alt">
+  <div class="container is-max-desktop">
+    <h2 class="section-title">Abstract</h2>
+    <p class="abstract-text">
+      For robotic agents operating in dynamic environments, learning visual state representations from streaming video observations is essential for sequential decision making. Recent self-supervised learning methods have shown strong transferability across vision tasks, but they do not explicitly address what a good visual state should encode. We argue that effective visual states must capture <span style="color:#e03030;">what-is-where</span> by jointly encoding the semantic identities of scene elements and their spatial locations, enabling reliable detection of subtle dynamics across observations. To this end, we propose <strong>CroBo</strong>, a visual state representation learning framework based on a global-to-local reconstruction objective. Given a reference observation compressed into a compact bottleneck token, <strong>CroBo</strong> learns to reconstruct heavily masked patches in a local target crop from sparse visible cues, using the global bottleneck token as context. This learning objective encourages the bottleneck token to encode a fine-grained representation of scene-wide semantic entities, including their identities, spatial locations, and configurations. As a result, the learned visual states reveal how scene elements move and interact over time, supporting sequential decision making. We evaluate <strong>CroBo</strong> on diverse vision-based robot policy learning benchmarks, where it achieves state-of-the-art performance. Reconstruction analyses and perceptual straightness experiments further show that the learned representations preserve pixel-level scene composition and encode <span style="color:#1a6fd4;">what-moves-where</span> across observations.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════ METHOD ══ -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="section-title">Method</h2>
+
+    <div class="fig-container">
+      <img src="figs/architecture_main.png" alt="CroBo architecture">
+      <p class="fig-caption">
+        <strong>Figure 1. CroBo architecture.</strong>
+        A global source view is encoded by a vision backbone into a compact
+        <em>bottleneck token</em>. The decoder then reconstructs the pixel content of
+        heavily masked patches sampled from a local crop of the same frame,
+        using sparse visible hints and the global bottleneck context.
+        The high masking ratio (90%) compels the bottleneck to store precise
+        what-is-where information across the entire observation.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════ QUALITATIVE RESULTS ══ -->
+<section class="section section-alt">
+  <div class="container is-max-desktop">
+    <h2 class="section-title">Qualitative Results</h2>
+
+    <!-- Reconstruction -->
+    <h3 class="subtitle has-text-centered" style="font-size:1.2rem; font-weight:600; margin-bottom:1rem;">
+      Reconstruction Visualisation
+    </h3>
+    <div class="fig-container">
+      <img src="figs/qual_recon.png" alt="Reconstruction visualisation">
+      <p class="fig-caption">
+        <strong>Figure 2. Reconstruction quality.</strong>
+        CroBo accurately restores masked patches across diverse scenes —
+        CLEVR (synthetic objects), DAVIS (natural video), and Franka Kitchen
+        (robot manipulation) — faithfully preserving both object identity and
+        spatial location from the bottleneck token alone.
+      </p>
+    </div>
+
+    <!-- Perceptual Straightness -->
+    <h3 class="subtitle has-text-centered" style="font-size:1.2rem; font-weight:600; margin-top:2.5rem; margin-bottom:1rem;">
+      Perceptual Straightness Analysis
+    </h3>
+    <div class="fig-container">
+      <img src="figs/qual_perceptual_straightness.png" alt="Perceptual straightness">
+      <p class="fig-caption">
+        <strong>Figure 3. Perceptual straightness.</strong>
+        CroBo produces smoother representation trajectories over time
+        (75.4° mean curvature) compared to DINOv2 (103.28°).
+        Straighter trajectories indicate that the latent space better reflects
+        smooth visual state transitions, benefiting sequential decision-making.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ QUANTITATIVE RESULTS ══ -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="section-title">Quantitative Results</h2>
+
+    <div class="fig-container">
+      <img src="figs/quan_score.png" alt="Quantitative results">
+      <p class="fig-caption">
+        <strong>Figure 4. Benchmark comparison.</strong>
+        CroBo achieves state-of-the-art performance on Franka Kitchen (best on 4/5 tasks,
+        including +13.6% on Micro&nbsp;Open) and competitive results across DeepMind
+        Control Suite manipulation and locomotion tasks.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+</body>
+</html>
