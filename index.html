@@ -134,6 +134,31 @@
       line-height: 1.7;
     }
 
+    /* ── Conference badge ── */
+    .conference-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #1565c0, #1976d2);
+      color: #fff;
+      border-radius: 30px;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      box-shadow: 0 2px 10px rgba(21, 101, 192, 0.35);
+      margin-top: 1rem;
+    }
+
+    .conference-badge .badge-workshop {
+      font-weight: 400;
+      font-size: 0.85rem;
+      opacity: 0.9;
+      border-left: 1px solid rgba(255,255,255,0.4);
+      padding-left: 0.6rem;
+      margin-left: 0.1rem;
+    }
+
     /* ── Alternating section bg ── */
     .section-alt {
       background: #fafafa;
@@ -192,6 +217,14 @@
 
       <div class="publication-venue mt-3">
         Agency for Defence Development (ADD)
+      </div>
+
+      <div class="mt-3">
+        <span class="conference-badge">
+          <span class="icon is-small"><i class="fas fa-award"></i></span>
+          <span>CVPR 2026</span>
+          <span class="badge-workshop">Workshop · Pixel-level Video Understanding in the Wild</span>
+        </span>
       </div>
 
       <!-- Links -->
