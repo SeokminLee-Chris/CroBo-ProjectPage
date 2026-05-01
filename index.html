@@ -69,6 +69,10 @@
       padding: 3rem 1.5rem;
     }
 
+    .teaser-section {
+      padding-top: 1.25rem;
+    }
+
     .section-title {
       font-size: 1.75rem;
       font-weight: 700;
@@ -106,6 +110,52 @@
       max-width: 860px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    /* ── Demos ── */
+    .video-showcase {
+      max-width: 980px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .video-card {
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .video-card video {
+      display: block;
+      width: 100%;
+      background: #111;
+      aspect-ratio: 16 / 3;
+      object-fit: contain;
+    }
+
+    .video-card-body {
+      padding: 1rem;
+    }
+
+    .video-card-title {
+      font-family: 'Google Sans', 'Noto Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .video-card-description {
+      color: #555;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      text-align: left;
     }
 
     /* ── BibTeX ── */
@@ -253,9 +303,62 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════ TEASER ══ -->
+<!-- ═══════════════════════════════════════════════════ DEMOS ══ -->
+<section class="section section-alt teaser-section">
+  <div class="container is-max-desktop">
+
+    <div class="video-showcase">
+      <h2 class="section-title">Perceptual Straightness Demos</h2>
+      <div class="video-grid">
+        <article class="video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="demos/davis_kite-walk.mp4" type="video/mp4">
+          </video>
+          <div class="video-card-body">
+            <h3 class="video-card-title">DAVIS Kite Walk</h3>
+            <p class="video-card-description">
+              In this DAVIS video, the person's position in the image shifts from left to right and
+              back to the left due to camera motion. CroBo captures this left-right-left
+              position change while producing a smoother trajectory than competing
+              representations.
+            </p>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="demos/mosev2_1qlssuz2.mp4" type="video/mp4">
+          </video>
+          <div class="video-card-body">
+            <h3 class="video-card-title">MOSEv2 1qlssuz2</h3>
+            <p class="video-card-description">
+              In this rotating-scene example, CroBo preserves the rotation dynamics while
+              maintaining a smooth representation trajectory over time.
+            </p>
+          </div>
+        </article>
+
+        <article class="video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="demos/mosev2_7bh6bqw6.mp4" type="video/mp4">
+          </video>
+          <div class="video-card-body">
+            <h3 class="video-card-title">MOSEv2 7bh6bqw6</h3>
+            <p class="video-card-description">
+              During rotational motion, CroBo forms a smooth and structured cyclic trajectory
+              in the latent space.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ TLDR ══ -->
 <section class="section">
   <div class="container is-max-desktop">
+    <h2 class="section-title">TL;DR</h2>
 
     <div class="fig-container">
       <img src="figs/architecture_main.png" alt="CroBo overview teaser">
